@@ -20,7 +20,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 class FastImageViewConverter {
-    private static final Drawable TRANSPARENT_DRAWABLE = new ColorDrawable(Color.TRANSPARENT);
+    private static final Drawable WHITE_DRAWABLE = new ColorDrawable(Color.WHITE);
 
     private static final Map<String, FastImageCacheControl> FAST_IMAGE_CACHE_CONTROL_MAP =
             new HashMap<String, FastImageCacheControl>() {{
@@ -89,7 +89,7 @@ class FastImageViewConverter {
                 .onlyRetrieveFromCache(onlyFromCache)
                 .skipMemoryCache(skipMemoryCache)
                 .priority(priority)
-                .placeholder(TRANSPARENT_DRAWABLE);
+                .placeholder(WHITE_DRAWABLE);
     }
 
     private static FastImageCacheControl getCacheControl(ReadableMap source) {

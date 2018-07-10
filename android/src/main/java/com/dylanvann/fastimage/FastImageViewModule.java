@@ -9,8 +9,6 @@ import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.ReadableArray;
 import com.facebook.react.bridge.ReadableMap;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 
 class FastImageViewModule extends ReactContextBaseJavaModule {
 
@@ -43,7 +41,6 @@ class FastImageViewModule extends ReactContextBaseJavaModule {
                             //    - content://
                             //    - data:image/png;base64
                             .load(stringUrl.startsWith("http") ? glideUrl : stringUrl)
-                            .placeholder(new ColorDrawable(Color.WHITE))
                             .apply(FastImageViewConverter.getOptions(source))
                             .preload();
                 }

@@ -41,6 +41,7 @@ class FastImageViewModule extends ReactContextBaseJavaModule {
                             //    - content://
                             //    - data:image/png;base64
                             .load(stringUrl.startsWith("http") ? glideUrl : stringUrl)
+                            .placeholder(new ColorDrawable(Color.WHITE))
                             .apply(FastImageViewConverter.getOptions(source))
                             .preload();
                 }
